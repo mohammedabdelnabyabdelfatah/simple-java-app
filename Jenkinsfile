@@ -8,6 +8,8 @@ node{
             sh'echo "exception found"'
             throw e
         }
+    }  // This closing brace was missing for the stage('build') block
+    
     stage('test'){
         if(env.BRANCH_NAME == "feat"){
             sh 'echo "test stage"'
@@ -15,7 +17,5 @@ node{
         else{
             sh'echo "skip test stage"'
         }
-
-    }
-
-}
+    }  // This closing brace was missing for the stage('test') block
+}  // This closing brace closes the node block
