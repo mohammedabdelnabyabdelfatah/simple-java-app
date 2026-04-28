@@ -1,21 +1,19 @@
-node{
-    git branch: 'main', url: 'https://github.com/mohammedabdelnabyabdelfatah/simple-java-app.git'
-    stage('build'){
-        try{
-            sh'echo "build stage"'
+pipeline{
+    agent any
+    stages{
+        stage('build'){
+            steps{
+                script{
+                    echo "build in progress"
+                }
+            }
         }
-        catch(Exception e){
-            sh'echo "exception found"'
-            throw e
+        stage('test'){
+            steps{
+                script{
+                    echo "test in progress"
+                }
+            }
         }
-    }  // This closing brace was missing for the stage('build') block
-    
-    stage('test'){
-        if(env.BRANCH_NAME == "feat"){
-            sh 'echo "test stage"'
-        }
-        else{
-            sh'echo "skip test stage"'
-        }
-    }  // This closing brace was missing for the stage('test') block
-}  // This closing brace closes the node block
+    }
+}
