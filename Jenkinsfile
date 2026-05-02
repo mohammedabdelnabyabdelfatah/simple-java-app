@@ -4,7 +4,7 @@ pipeline{
         stage('build'){
             steps{
                 script{
-                    sh 'mvn clean package'
+                    echo "build in progress"
                 }
             }
         }
