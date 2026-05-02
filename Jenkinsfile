@@ -18,10 +18,7 @@ pipeline{
     }
     post {
        success{ 
-      slackSend channel: '#jenkins-ci', message: '"Build success - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" ', teamDomain: 'myproject-0ne3130', tokenCredentialId: 'slack-notification'
-  }
+            slackSend channel: '#jenkins-ci', message: '"Build success - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" ', teamDomain: 'myproject-0ne3130', tokenCredentialId: 'slack-notification'
+        }
     }
-}
-
-    
 }
